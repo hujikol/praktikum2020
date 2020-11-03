@@ -1,0 +1,55 @@
+---
+title: "Latihan Modul 4"
+author: "Nicholas Nanda S"
+date: "11/3/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Deskripsi
+
+Ini adalah dokumen R markdown, dibuat untuk menyelesaikan tugas praktikum data science latihan modul 4.
+
+## Import Library dan Dataset
+```{r murders}
+library(dslabs)
+data("murders")
+```
+
+## 1. Assign pop value
+
+Menyimpan data populasi pada variable pop
+
+```{r pop}
+pop <- murders$population
+pop
+```
+
+Sorting data populasi
+
+```{r sort}
+popSort <- sort(pop)
+```
+
+Nilai populasi terkecil
+
+```{r}
+popSort[1]
+```
+
+
+## 2. Indeks populasi terkecil
+
+Menampilkan indeks tiap-tiap data populasi dan terurut dari yang terkecil
+
+```{r order}
+pop
+order(pop)
+```
+
+
+## 3. 
+
