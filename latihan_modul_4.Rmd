@@ -51,5 +51,65 @@ order(pop)
 ```
 
 
-## 3. 
+
+## 3. Fungsi which.min
+
+Dengan menggunakkan fungsi which.min untuk membuat hasil seperti sebelumnya.
+
+```{r which}
+minMurder <- which.min(murders$population)
+```
+
+
+## 4. Nama Negara dengan Populasi terkecil
+
+```{r minMurder}
+murders$state[minMurder]
+```
+
+
+## 5. Peringkat Populasi Negara
+
+```{r ranks}
+ranks <- rank(murders$population)
+my_df <- data.frame(Nama = murders$state, Ranking = ranks)
+head(my_df)
+```
+
+## 6. Peringkat Populasi Negara (terurut terkecil)
+
+Mengulangi langkah sebelumnya untuk mengurutkan populasi negara dari yang terkecil 
+
+```{r minRanks}
+ranks <- rank(murders$population)
+my_df <- data.frame(Nama = murders$state, Ranking = ranks)
+ind <- order(my_df$Ranking)
+my_df$Nama[ind]
+```
+
+\newpage
+## 7. Visualisasi menggunakan Plot
+
+Analisis total pembunuhan dengan jumlah populasi.
+
+```{r ploting}
+population_in_millions <- murders$population/10^6 
+total_gun_murders <- murders$total 
+plot(log10(population_in_millions), total_gun_murders)
+```
+
+\newpage
+## 8. Histogram Populasi Negara Bagian
+
+```{r histogram}
+populasi <- with(murders, murders$population/10^6)
+hist(populasi, main = "Populasi Negara Bagian")
+```
+
+\newpage
+## 9. Boxplot Populasi Negara Bagian/ wilayah
+
+```{r boxplot}
+boxplot(population~region, data = murders)
+```
 
